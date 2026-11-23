@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Community Library Book Tracker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  </head>
+  <body>
+    <main class="card">
+      <p class="eyebrow">Community Library Book Tracker</p>
+      <h1>Welcome!</h1>
+
+      {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+          <div class="messages" role="status" aria-live="polite">
+            {% for category, message in messages %}
+              <p class="message {{ category }}">{{ message }}</p>
+            {% endfor %}
+          </div>
+        {% endif %}
+      {% endwith %}
+
+      <p class="intro">You’re signed in as <strong>{{ email }}</strong>.</p>
+      <p>Your account is ready. The library tracker is ready for you to get started.</p>
+      <form method="post" action="{{ url_for('logout') }}">
+        <button class="secondary" type="submit">Sign out</button>
+      </form>
+    </main>
+  </body>
+</html>
