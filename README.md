@@ -23,3 +23,7 @@ stored in `instance/users.sqlite` by default; set `DATABASE_PATH` to use another
 database file. The Docker image serves the app with Gunicorn on port 5000.
 
 Run the auth tests with `python -m unittest discover -s tests`.
+
+
+## Status
+Basic function the MVP are set with AI helping fix errors,add suggestions,and help generate code
